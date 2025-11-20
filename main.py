@@ -6,9 +6,19 @@ import json
 import sys
 
 # --- Configuration ---
-NUM_WINNERS = 3
-BASE_SEED = "CorvusEliteRaffle_April142025_WeightedEntries" # Set your raffle's base seed
+y = True
+while y == True:
+  x = input("Winners Quantity: ")
+  try:
+    x = float(x);
+    y = False
+  except:
+    print("Wrong input, please try again.")
+    
+NUM_WINNERS = int(x)
+BASE_SEED = input("Letters and numbers for randomness: ") # Set your raffle's base seed
 PARTICIPANTS_FILE = "participants.json"
+print()
 
 # --- Load Participants ---
 try:
@@ -95,7 +105,9 @@ if winners:
         print(f"{i+1}. {winner}")
 else:
     print("No winners were drawn.")
+print()
 print("=" * 50)
 print("VERIFICATION INFO: Record the 'Base Seed' and 'Nonce Generated'.")
 print("Use verify.py with these values to confirm the results.")
 print("=" * 50)
+print()
