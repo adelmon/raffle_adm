@@ -57,8 +57,8 @@ total_entries = len(full_entry_list)
 num_unique_participants = len(participants_weights)
 
 if NUM_WINNERS > num_unique_participants:
-    print(f"Warning: Requesting {NUM_WINNERS} winners, but only {num_unique_participants} unique participants exist.", file=sys.stderr)
-    print(f"Adjusting to draw {num_unique_participants} winner(s).", file=sys.stderr)
+    print(f"\033[91m >> Warning: Requesting {NUM_WINNERS} winners, but only {num_unique_participants} unique participants exist. << \033[00m", file=sys.stderr)
+    print(f"\033[92m Adjusting to draw {num_unique_participants} winner(s).\033[00m", file=sys.stderr)
     NUM_WINNERS = num_unique_participants
 
 # --- Generate Nonce ---
@@ -95,8 +95,8 @@ print(f"Number of Winners Drawn: {len(winners)}") # Actual number drawn
 print(f"Total Weighted Entries: {total_entries}")
 print(f"Unique Participants: {num_unique_participants}")
 print("-" * 50)
-print(f"Base Seed: '{BASE_SEED}'")
-print(f"Nonce Generated: '{nonce}'")
+print(f"\033[93mBase Seed: '{BASE_SEED}'\033[00m")
+print(f"\033[93mNonce Generated: '{nonce}'\033[00m")
 print(f"Final Seed (SHA-256 Hash): '{final_seed_hex}'")
 print("-" * 50)
 print("           🏆 WINNERS 🏆")
@@ -107,7 +107,7 @@ else:
     print("No winners were drawn.")
 print()
 print("=" * 50)
-print("VERIFICATION INFO: Record the 'Base Seed' and 'Nonce Generated'.")
+print("VERIFICATION INFO: \033[93mRecord the 'Base Seed' and 'Nonce Generated'.\033[00m")
 print("Use verify.py with these values to confirm the results.")
 print("=" * 50)
 print()
