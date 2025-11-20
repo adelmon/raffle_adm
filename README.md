@@ -40,17 +40,17 @@ The system achieves verifiable fairness through these combined mechanisms:
 1.  Ensure you have Python 3 installed.
 2.  Save the files `main.py`, `verify.py`, and `participants.json` in the same directory.
 3.  **Edit `participants.json`**: Update this file with your list of participants and their corresponding weights (number of entries). Ensure it's valid JSON.
-4.  **(Optional) Edit `main.py`**:
-    *   Change the `BASE_SEED` variable to something unique for your raffle series.
-    *   Adjust the `NUM_WINNERS` variable to the desired number of winners for the draw.
 
 ### Running the Raffle
 
 1.  Open a terminal or command prompt in the directory containing the files.
 2.  Run the main script: `python main.py`
-3.  The script will output:
+3.  The script will ask for:
+    *   **`Winners Quantity`**  (the desired number of winners for the draw).
+    *   **`Letters and numbers for randomness`** (the base seed).
+5.  The script will output:
     *   Draw details (timestamp, number of winners, entry counts).
-    *   The **`Base Seed`** used.
+    *   The **`Base Seed`** used. <<< **RECORD THIS!**
     *   The **`Nonce Generated`** for this specific run. <<< **RECORD THIS!**
     *   The calculated Final Seed (SHA-256 Hash).
     *   The list of **`🏆 WINNERS 🏆`**. <<< **RECORD THESE!**
